@@ -6,7 +6,7 @@ sudo apt install apache2
 
 sudo systemctl status apache2
 
-![apache status](./Images/Apache-status.jpg)
+![apache status](./images/Apache-status.jpg)
 
 [install openssh](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell)
 
@@ -58,7 +58,7 @@ sudo mkdir /var/www/projectlamp
  sudo chown -R $USER:$USER /var/www/projectlamp
 
 ! create a configuraton file called projectlamp.conf with the text below and save
-[<VirtualHost *:80>
+<VirtualHost *:80>
     ServerName projectlamp
     ServerAlias www.projectlamp 
     ServerAdmin webmaster@localhost
@@ -66,7 +66,7 @@ sudo mkdir /var/www/projectlamp
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-]
+
 sudo vi /etc/apache2/sites-available/projectlamp.conf
 sudo ls /etc/apache2/sites-available
 
