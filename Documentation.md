@@ -13,15 +13,18 @@ sudo systemctl status apache2
 [generate openssh key](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 
 ! Create 2 inbound rules on AWS EC2 instance
- ![img1](./images/inbound-rules.png)
+
+![img1](./images/inbound-rules.png)
 
 ! Visit the public address on a web browser
+
 ![img2](./images/apache-default-page.png)
  
 
 ! Installing MYSQL
 sudo apt install mysql-server
 sudo mysql
+
 ![img3](./images/msql-installed.png)
  
 
@@ -30,22 +33,27 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord
 
 ! Run script to secure mysql
 sudo mysql_secure_installation
+
 ![img4](./images/msql-secure-installed.png)
+
 ![img5](./images/msql-secure-installed2.png)
  
  
 
 ! Check msql root access
 sudo mysql -p
+
  ![img6](./images/check-root-access.png)
  
 
 ! Installing PHP
 sudo apt install php libapache2-mod-php php-mysql
+
 ![img7](./images/php-installed.png)
  
 ! Confirm installation
 php -v
+
 ![img8](./images/php-install-confirm.png)
  
 
@@ -78,10 +86,12 @@ sudo a2dissite 000-default
 sudo apache2ctl configtest
 sudo systemctl reload apache2
 sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html
+
 ![img10](./images/enable-virtualhost.png)
  
 ! check browser address
 http://<Public-IP-Address>:80
+
 ![img11](./images/browser.png)
 
  
@@ -107,6 +117,7 @@ phpinfo();
 vim /var/www/projectlamp/index.php
 
 ! refresh page
+
 ![img12](./images/browser-refresh.png)
  
 !Remove index.php file
